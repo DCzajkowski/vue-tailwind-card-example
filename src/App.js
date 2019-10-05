@@ -1,18 +1,11 @@
-<template>
-  <div id="app" class="antialiased font-sans flex flex-col p-8">
-    <Card v-for="item in items" :key="item.id" :item="item" :dark="true" />
-  </div>
-</template>
-
-<script>
 import Card from '@/components/Card';
 import Cat from '@/assets/cat.jpeg';
 
+import '@/assets/app.css';
+
 export default {
-  components: {
-    Card,
-  },
   data: () => ({
+    isDark: true,
     items: [
       {
         id: 1,
@@ -38,11 +31,18 @@ export default {
       },
     ],
   }),
+  methods: {
+    toggleTheme() {
+      this.isDark = !this.isDark;
+    },
+  },
+  render() {
+    return (
+      <div id="app" class="antialiased font-sans flex flex-col p-8" vOn:click={this.toggleTheme}>
+        {this.items.map(item => (
+          <Card key={item.id} item={item} dark={this.isDark} />
+        ))}
+      </div>
+    );
+  },
 };
-</script>
-
-<style lang="postcss">
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-</style>
