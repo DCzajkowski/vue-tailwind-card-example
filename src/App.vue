@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="antialiased font-sans flex flex-col p-8">
-    <Card v-for="item in items" :key="item.id" v-bind="item" />
+    <Card v-for="item in items" :key="item.id" :item="item" :dark="true" />
   </div>
 </template>
 

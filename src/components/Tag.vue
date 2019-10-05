@@ -1,16 +1,24 @@
 <template>
   <a
     :href="url"
-    class="inline-block px-4 py-1 bg-gray-300 rounded-full text-sm font-semibold text-gray-700 focus:outline-none focus:shadow-outline hover:bg-gray-500 hover:text-gray-900 mr-2 mt-2 sm:mt-0"
-    >#{{ name }}</a
+    class="inline-block px-4 py-1 rounded-full text-sm font-semibold focus:outline-none focus:shadow-outline mr-2 mt-2 sm:mt-0"
+    :class="{
+      'bg-gray-300 text-gray-700 hover:bg-gray-500 hover:text-gray-900': !dark,
+      'bg-gray-700 text-gray-300 hover:bg-gray-600 hover:text-gray-900': dark,
+    }"
+    >#{{ tag.name }}</a
   >
 </template>
 
 <script>
+import VueTypes from 'vue-types';
 import { Tag } from '@/types';
 
 export default {
-  props: Tag,
+  props: {
+    tag: Tag,
+    dark: VueTypes.bool.def(false),
+  },
   computed: {
     url() {
       return `http://localhost/${this.name}`;
