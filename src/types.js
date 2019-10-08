@@ -15,4 +15,4 @@ export const Card = {
   tags: VueTypes.arrayOf(VueTypes.shape(Tag)),
 };
 
-export const shape = VueTypes.shape;
+export const types = VueTypes;

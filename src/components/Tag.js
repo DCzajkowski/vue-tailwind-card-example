@@ -1,15 +1,14 @@
-import VueTypes from 'vue-types';
-import { Tag } from '@/types';
+import { Tag, types } from '@/types';
 
 /* @vue/component */
 export default {
   props: {
     tag: Tag,
-    dark: VueTypes.bool.def(false),
+    dark: types.bool.def(false),
   },
   computed: {
     url() {
-      return `http://localhost/${this.name}`;
+      return `http://localhost/tags/${this.tag.name}`;
     },
   },
   render() {

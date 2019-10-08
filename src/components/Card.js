@@ -1,12 +1,11 @@
-import VueTypes from 'vue-types';
-import { Card } from '@/types';
+import { Card, types } from '@/types';
 import Tag from '@/components/Tag';
 
 /* @vue/component */
 export default {
   props: {
     item: Card,
-    dark: VueTypes.bool.def(false),
+    dark: types.bool.def(false),
   },
   render() {
     return (
