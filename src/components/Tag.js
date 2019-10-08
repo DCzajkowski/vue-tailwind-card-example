@@ -1,6 +1,7 @@
 import VueTypes from 'vue-types';
 import { Tag } from '@/types';
 
+/* @vue/component */
 export default {
   props: {
     tag: Tag,

@@ -2,6 +2,7 @@ import VueTypes from 'vue-types';
 import { Card } from '@/types';
 import Tag from '@/components/Tag';
 
+/* @vue/component */
 export default {
   props: {
     item: Card,

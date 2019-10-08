@@ -3,6 +3,7 @@ import Cat from '@/assets/cat.jpeg';
 
 import '@/assets/app.css';
 
+/* @vue/component */
 export default {
   data: () => ({
     isDark: true,
